@@ -1,0 +1,5 @@
+ia_env/
+logs/
+data_simulator/__pycache__
+data_simulator/archive/*
+data_simulator/data_output/*

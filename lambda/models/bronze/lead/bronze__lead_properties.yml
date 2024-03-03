@@ -1,0 +1,13 @@
+version 2:
+
+models:
+  - name: bronze__vw_lead_fresh
+    config:
+      materialized: view
+  - name: bronze__vw_lead_lambda
+    config:
+      materialized: view
+  - name: bronze__tbl_lead_hist
+    config:
+      materialized: incremental
+      unique_key: ['lead_id', 'loaded_at']

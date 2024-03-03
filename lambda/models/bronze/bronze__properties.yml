@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: bronze__agent
+    config:
+      materialized: incremental
+      unique_key: agent_id
+  - name: bronze__customer
+    config:
+      materialized: incremental
+      unique_key: customer_id
+  - name: bronze__policy
+    config:
+      materialized: incremental
+      unique_key: policy_id
+  - name: bronze__customer_lead_mapping
+    config:
+      materialized: incremental
+      unique_key: ['lead_id', 'customer_id']
