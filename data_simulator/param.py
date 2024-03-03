@@ -1,5 +1,5 @@
 DRIVER='''{ODBC Driver 18 for SQL Server}'''
 SERVER='''192.168.56.1,1435'''
 DATABASE='''insurance_sim'''
-UID='''ia_dba'''
+UID='''is_dba'''
 PWD='''dba@123'''
