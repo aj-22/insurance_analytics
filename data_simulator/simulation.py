@@ -10,7 +10,7 @@ import time
 
 class Lead_Generator:
     def __init__(self):
-        self.output_dir = '''.\\data_output'''
+        self.output_dir = '''.''' + os.sep + '''data_output'''
         self.sql = SQL()
         self.faker = Faker('en_IN')
         
@@ -117,7 +117,7 @@ class Lead_Generator:
 
     def write_data(self, data):
         filename = 'TXN'+datetime.now().strftime("%Y%m%d%H%M%S%f") +'.json'
-        with open(self.output_dir + '\\' + filename, 'w') as f:
+        with open(self.output_dir + os.sep + filename, 'w') as f:
             f.write(json.dumps(data))
 
     def generate_leads(self, number = 20):

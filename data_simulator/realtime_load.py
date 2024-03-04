@@ -15,14 +15,14 @@ class Live_Loader:
         self.sql.cursor.commit()
 
     def archive_file(self, filepath, filename):
-        archive_path = os.path.abspath('.\\archive\\'+filename)
+        archive_path = os.path.abspath('.'+os.sep+'archive'+os.sep+filename)
         os.replace(filepath, archive_path)
 
-    def iterate_load_archive(self, folder='.\\data_output'):
+    def iterate_load_archive(self, folder='.'+os.sep+'data_output'):
         filenames = os.listdir(folder)
         for filename in filenames:
             if filename[-5:] == '.json':
-                filepath = os.path.abspath(f'{folder}\\{filename}')
+                filepath = os.path.abspath(f'{folder}{os.sep}{filename}')
                 self.load_json(filepath)
                 self.archive_file(filepath, filename)
     

@@ -9,17 +9,17 @@
         customer_id (Foreign Key referencing Customers table)
 */
 
-drop table staging.agent; 
-GO
-drop table staging.claim;
-GO
-drop table staging.customer;
-GO
-drop table staging.lead_blob;
-GO
-drop table staging.policy;
-GO
-
+-- drop table staging.agent; 
+-- GO
+-- drop table staging.claim;
+-- GO
+-- drop table staging.customer;
+-- GO
+-- drop table staging.lead_blob;
+-- GO
+-- drop table staging.policy;
+-- GO
+-- 
 
 create table staging.policy (
     policy_id varchar(64),
