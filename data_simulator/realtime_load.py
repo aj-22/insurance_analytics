@@ -6,10 +6,16 @@ class Live_Loader:
         self.sql = SQL()
 
     def load_json(self, filepath):
+        with open(filepath,'r') as f:
+            json_data = f.read()
+        # sql_statement = f'''
+        # INSERT INTO staging.lead_blob
+        # SELECT bulkColumn, '{filepath}' as file_name, current_timestamp as loaded_at
+        # FROM OPENROWSET(BULK '{filepath}', SINGLE_CLOB) as j
+        # '''
         sql_statement = f'''
         INSERT INTO staging.lead_blob
-        SELECT bulkColumn, '{filepath}' as file_name, current_timestamp as loaded_at
-        FROM OPENROWSET(BULK '{filepath}', SINGLE_CLOB) as j
+        SELECT '{json_data}' as bulk_column, '{filepath}' as file_name, current_timestamp as loaded_at;
         '''
         self.sql.cursor.execute(sql_statement)
         self.sql.cursor.commit()

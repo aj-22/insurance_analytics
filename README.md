@@ -32,3 +32,7 @@ Execute dbt job: `dbt run`
 ## Future Feature
 
 Airflow to execute `realtime_load.py` on a minute basis and run batch jobs hourly basis.
+
+## Install Airflow
+
+

@@ -1,4 +1,5 @@
 ia_env/
+ia_env2/
 logs/
 data_simulator/__pycache__
 data_simulator/archive/*

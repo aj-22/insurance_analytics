@@ -5,7 +5,7 @@ class SQL:
     def __init__(self):
         odbc_string = '''DRIVER=''' + param.DRIVER+''';SERVER=''' + param.SERVER + \
                         ''';DATABASE=''' + param.DATABASE + ''';UID=''' + param.UID + ''';PWD=''' + param.PWD + \
-                        ''';Trusted_Connection=yes;Encrypt=no;Integrated_Security=no'''
+                        ''';Encrypt=no;Integrated_Security=no'''
         self.conn = pyodbc.connect(odbc_string)
         self.cursor = self.conn.cursor()
         print("Connection established")
